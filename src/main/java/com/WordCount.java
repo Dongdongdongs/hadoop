@@ -28,6 +28,7 @@ public class WordCount {
 			String line = value.toString();
 			StringTokenizer st = new StringTokenizer(line, "\t\r\n\f|,.()<>"); // 안에있는 값들 다 잘라버린다
 			while(st.hasMoreTokens()) {
+				word.set(st.nextToken().toLowerCase());		// 대소문자 구문 없이 소문자로만, 마지막에 없으면 펄스
 				context.write(word,lw);
 			}
 		}
