@@ -23,9 +23,11 @@ public class ConnectionHadoop {
 				
 				FileSystem fs = FileSystem.get(config);
 				
-				Path upFileName = new Path("word.txt");		// 워드라는 파일을		
+				Path upFileName = new Path("word.txt");		// 워드라는 파일을
+				Path logFileName = new Path("word.log");
 				if(fs.exists(upFileName)) {			// 파일이 있다면
 					fs.delete(upFileName,true);		// 지우고나서
+					fs.delete(logFileName,true);
 				}
 				FSDataOutputStream fsdo = fs.create(upFileName);		// 만들고
 				fsdo.writeUTF("hi hi hi hey hey lol start hi");			// 내용 넣는다
