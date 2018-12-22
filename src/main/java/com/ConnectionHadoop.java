@@ -18,7 +18,7 @@ public class ConnectionHadoop {
 			@Override
 			public Void run() throws Exception {
 				Configuration config = new Configuration();
-				config.set("fs.defaultFS", "hdfs://192.168.0.182:9000/user/bdi");  // 자기 리눅스 아이피, 앞에껀 키값
+				config.set("fs.defaultFS", "hdfs://192.168.0.154:9000/user/bdi");  // 자기 리눅스 아이피, 앞에껀 키값
 				config.setBoolean("dfs.suppourt.append", true);
 				
 				FileSystem fs = FileSystem.get(config);
