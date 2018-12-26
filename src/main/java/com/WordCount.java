@@ -19,7 +19,7 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class WordCount {
 	
-	public static class WCMapper extends Mapper<LongWritable, Text, Text, LongWritable>{
+	public static class WordCountMapper extends Mapper<LongWritable, Text, Text, LongWritable>{
 		private final static LongWritable lw = new LongWritable();
 		private Text word = new Text();
 		
@@ -34,7 +34,7 @@ public class WordCount {
 		}
 	}
 	
-	public static class WCReducer extends Reducer<Text, LongWritable, Text, LongWritable>{
+	public static class WordCountReducer extends Reducer<Text, LongWritable, Text, LongWritable>{
 		
 		private LongWritable lw = new LongWritable();
 		
@@ -52,8 +52,8 @@ public class WordCount {
 		Configuration conf = new Configuration();
 		Job job = Job.getInstance(conf,"WordCount");
 		job.setJarByClass(WordCount.class);
-		job.setMapperClass(WCMapper.class);
-		job.setReducerClass(WCReducer.class);
+		job.setMapperClass(WordCountMapper.class);
+		job.setReducerClass(WordCountReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
 		job.setInputFormatClass(TextInputFormat.class);
