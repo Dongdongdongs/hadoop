@@ -58,8 +58,8 @@ public class WordCount {
 		job.setOutputValueClass(LongWritable.class);
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
-		FileInputFormat.addInputPath(job, new Path("word.txt"));
-		FileOutputFormat.setOutputPath(job, new Path("word.log"));
+		FileInputFormat.addInputPath(job, new Path("wordcount.txt"));
+		FileOutputFormat.setOutputPath(job, new Path("wordcount.log"));
 		job.waitForCompletion(true);
 		
 	}

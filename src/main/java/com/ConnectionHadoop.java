@@ -24,7 +24,7 @@ public class ConnectionHadoop {
 				FileSystem fs = FileSystem.get(config);
 				
 				Path upFileName = new Path("wordcount.txt");		// 워드라는 파일을
-				Path logFileName = new Path("word.log");
+				Path logFileName = new Path("wordcount.log");
 				if(fs.exists(upFileName)) {			// 파일이 있다면
 					fs.delete(upFileName,true);		// 지우고나서
 					fs.delete(logFileName,true);
